@@ -20,23 +20,26 @@ public class SubroutineProgram {
         System.out.println("What number do you want to test to see if it's prime? ");
         userInput = keyedInput.nextInt();
         //The code that does the testing
-        if (userInput>0){
-        //See if it's prime
-        while (userInput>loopVariable){
-            if (userInput%loopVariable == 0){
-                //Catching the loopholes
-                if (userInput == 1 ){
-                    System.out.println("Your number is not prime. ");
-                }
-                if (userInput == 0){
-                    System.out.println("Your number is not prime. ");
-                }
-                //End of loophole catching
+        if (userInput>=0){
+            //Catching the loopholes
+            if (userInput == 1 ){
                 System.out.println("Your number is not prime. ");
-            } else {
-                loopVariable = loopVariable + 1;
+                return;
             }
-        }
+            if (userInput == 0){
+                System.out.println("Your number is not prime. ");
+                return;
+            }
+        //End of loophole catching
+        //See if it's prime
+            while (userInput>loopVariable){
+                if (userInput%loopVariable == 0){
+                    System.out.println("Your number is not prime. ");
+                    return;
+                } else {
+                    loopVariable = loopVariable + 1;
+                }
+            }
         System.out.println("Your number is prime! Congratulations! ");
         } else {
             System.out.println("Add your number in as a positive instead. Multiply it by -1, and the answer will not change. Please choose a new number. ");
